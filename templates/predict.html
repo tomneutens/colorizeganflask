@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="centered">
+    <p>Colorization complete...</p>
+    {{ plot_div|safe }}
+</div>
+<script src="https://cdn.bokeh.org/bokeh/release/bokeh-2.3.3.min.js"></script>
+<script src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.3.3.min.js"></script>
+<script src= "https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.3.3.min.js"></script>
+{{ plot_script|safe }}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block body %}
+<p>Upload an image and our deep learning system will colorize the image. If you upload a color image the system will first turn it into black and white line art and color in that new image. The output shows the original image, the line-art image, and the colorized image.</p>
+
+<p>
+  Only jpg- and png-images are allowed. The system scales the images down to an sd resolution (max 720x576 or 576x720).
+</p>
+
+<form action="/" method="post" enctype="multipart/form-data">
+  <input type="file" name="image" id="image">
+  <input class="pure-button pure-button-primary" type="submit" value="Submit">
+</form>
+{% endblock %}
