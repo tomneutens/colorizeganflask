@@ -19,7 +19,7 @@ def is_allowed_file(filename):
 def is_allowed_image(filepath):
     img = Image.open(filepath)
     w, h = img.size
-    if w < 800 and h < 800:
+    if w < 1080 and h < 1080:
         return True
 
     return False

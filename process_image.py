@@ -79,7 +79,7 @@ def colorize(filename):
             line_art_rgb = color.gray2rgb(1 - line_art.cpu().numpy()[0, 0])
 
             # Combine original image and colored image into one
-            rgb_image = np.vstack((original_rgb, line_art_rgb, colored_rgb))
+            rgb_image = np.vstack((line_art_rgb, colored_rgb, original_rgb))
             rgb_image = 255 * rgb_image
             rgb_image = rgb_image.astype(np.uint8)
             im = Image.fromarray(rgb_image)
@@ -91,14 +91,4 @@ def colorize(filename):
             p = figure(plot_width=xdim, plot_height=ydim)
             p.image_rgba(image=[imarray2d], x=0, y=0, dw=xdim, dh=ydim)
             return components(p)
-
-            # PLOT
-            '''xdim, ydim = im.size
-            rgba_image = cv2.cvtColor(rgb_image, cv2.COLOR_RGB2RGBA)
-            #rgba_image = rgba_image.view(dtype=np.uint32).reshape((xdim, ydim, 4))
-            plot = figure(tooltips=[("x", "$x"), ("y", "$y"), ("value", "@image")])
-            plot.x_range.range_padding = plot.y_range.range_padding = 0
-            plot.image_rgba(image=[rgba_image], x=0, y=0, dw=10, dh=10, alpha=0.0, global_alpha=0.0)
-            show(plot)
-            return components(plot)'''
 
